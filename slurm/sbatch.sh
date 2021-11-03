@@ -19,7 +19,7 @@ ENV_ID=$(((SLURM_ARRAY_TASK_ID-1)%${#arrENVS[@]}))
 singularity exec --nv -B /usr/lib64 -B /var/lib/dcv-gl --overlay $SCRATCH/singularity/overlay-50G-10M.ext3:ro $SCRATCH/singularity/cuda10.2-cudnn7-devel-ubuntu18.04.sif /bin/bash -c "
 
 source /ext3/env.sh
-conda activate CQL
+conda activate SimpleSAC
 export PYTHONPATH="$PYTHONPATH:$(pwd)"
 
 cd $SCRATCH/youngs-cql
