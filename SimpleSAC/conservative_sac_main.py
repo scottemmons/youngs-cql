@@ -13,7 +13,7 @@ import d4rl
 import absl.app
 import absl.flags
 
-import .register_antmaze_v2
+import register_antmaze_v2
 
 from .conservative_sac import ConservativeSAC
 from .replay_buffer import ReplayBuffer, batch_to_torch, get_d4rl_dataset
