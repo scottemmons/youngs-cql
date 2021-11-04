@@ -8,11 +8,11 @@
 #SBATCH --partition=savio3
 #SBATCH --ntasks-per-node=8
 #SBATCH --nodes=1
-#SBATCH --time=30:00:00
+#SBATCH --time=40:00:00
 
 module load intel openmpi
 
-NUM_SEEDS=20
+NUM_SEEDS=6
 
 ENV_ID=$((SLURM_ARRAY_TASK_ID-1))
 
