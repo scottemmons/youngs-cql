@@ -19,4 +19,9 @@ ENV_ID=$((SLURM_ARRAY_TASK_ID-1))
 arrENVS=(${ENVS//;/ })
 ENV_NAME=${arrENVS[$ENV_ID]}
 
-ht_helper.sh -t taskfile.sh -w work -r $NUM_SEEDS -e ENV_NAME=$ENV_NAME
+MAX_STEPS=1000
+if [[ $ENV_NAME == *"umaze"* ]]; then
+    MAX_STEPS=700
+fi
+
+ht_helper.sh -t taskfile.sh -w work -r $NUM_SEEDS -e ENV_NAME=$ENV_NAME,MAX_STEPS=$MAX_STEPS
