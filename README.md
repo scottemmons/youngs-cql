@@ -62,14 +62,6 @@ python -m SimpleSAC.conservative_sac_main \
 ```
 
 
-## Fix AntMaze Datasets
-The timeout flags in the AntMaze -v0 datasets [are broken](https://github.com/rail-berkeley/d4rl/issues/77). The AntMaze -v1 datasets are new datasets generated to fix this issue, but the rollout policy used for the AntMaze -v1 datasets has less entropy than that of the original AntMaze -v0 datasets. So, we provide a script to fix the AntMaze -v0 timeouts flags.
-```
-python antmaze-fix/apply_fix.py
-```
-After running the above command, you should be able to create AntMaze -v2 environments within the SimpleSAC module. (The logic for registering the AntMaze -v2 environments is in SimpleSAC's `__init__.py`.)
-
-
 ## Run CQL in AntMaze
 To run CQL in AntMaze with the hyperparameters recommended by CQL's authors (documented in their [implementation of CQL](https://github.com/aviralkumar2907/CQL)), use the following command:
 ```
